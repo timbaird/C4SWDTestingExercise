@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace C4_Dev_Ops_TestingExercises
 {
-    class Bus : MotorVehicle
+    public class Bus : MotorVehicle
     {
         int maxNumPassengers;
         int numCurrentPassengers;
