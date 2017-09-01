@@ -13,12 +13,12 @@ namespace C4_Dev_Ops_TestingExercises
         public float litresPerKm { set; get; }
 
         public MotorVehicle(string pManufacturer, float pMaxSpeed, int pMaxFuel, 
-                            int pCurrentFuel, float pLitresPerKM) 
+                            int pCurrentFuel, double pLitresPerKM) 
                             : base(pManufacturer, pMaxSpeed)
         {
             maxFuel = pMaxFuel;
             currentFuel = pCurrentFuel;
-            litresPerKm = pLitresPerKM;
+            litresPerKm = Convert.ToSingle(pLitresPerKM);
         }
 
         // fills the motor vehicle from its current fuel level to its max fuel level 
@@ -33,7 +33,7 @@ namespace C4_Dev_Ops_TestingExercises
         // decreases the amount of current fuel by the # kms travelled * litres per KM.
         public void Travel(int pNumKMTravelled)
         {
-            int fuelRequired = (Int32)litresPerKm * pNumKMTravelled;
+            int fuelRequired = (Int32)(litresPerKm * pNumKMTravelled);
 
             if (currentFuel >= fuelRequired)
             {
